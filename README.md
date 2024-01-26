@@ -1,6 +1,6 @@
 # Aura Digital Store
 
-Welcome to Aura Digital Store! This project is a full-fledged Ecommerce Website developed to provide users with a seamless online shopping experience. Visit the live site [here](auradigitalstore.onrender.com).
+Welcome to Aura Digital Store! This project is a full-fledged Ecommerce Website developed to provide users with a seamless online shopping experience. Visit the live site [here](https://auradigitalstore.onrender.com).
 
 If you come across any bugs or have suggestions for improvements, please don't hesitate to share them with us.
 
@@ -10,7 +10,7 @@ We welcome contributions! If you find a bug, have a feature request, or would li
 
 ## License
 
-This project is licensed under the MIT `License` - see the LICENSE file for details.
+This project is licensed under the MIT License - see the `LICENSE` file for details.
 
 ## Acknowledgments
 
