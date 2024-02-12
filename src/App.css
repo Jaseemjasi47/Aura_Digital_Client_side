@@ -1,3 +1,9 @@
+body {
+  overflow-x: hidden;
+  background: linear-gradient(to right, #ffffff, #53def7, #ffffff, #53def7, #ffffff, #53def7, #ffffff, #53def7, #ffffff, #53def7, #ffffff, #53def7, #ffffff);
+  backdrop-filter: blur(15px);
+}
+
 .App {
   text-align: center;
 }
@@ -7,3 +13,73 @@
   justify-content: center;
   align-items: center;
 }
+
+.card:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+  /* Add shadow on hover */
+  transition: box-shadow 0.3s ease;
+  /* Add transition for smooth effect */
+}
+
+.product-card {
+  background: linear-gradient(to bottom, #ffffff93, #d9f1f581, #00a1be91);
+}
+
+.wishlist-icon {
+  position: absolute;
+  opacity: 0.6;
+  right: 0;
+  padding: 5px;
+  cursor: pointer;
+  transition: ease-in-out;
+}
+
+.wishlist-icon:hover {
+  scale: 1.4;
+  opacity: 1;
+}
+
+.cyan-btn {
+  padding: 4px;
+  text-decoration: none;
+  border-radius: 5px;
+  color: #00434e;
+  background-color: #ffffffd2;
+  border: 1px solid #00778b;
+}
+
+.cyan-btn:hover {
+  color: rgb(250, 250, 250);
+  background-color: #00566b;
+}
+
+
+.cyan-card {
+  padding: 4px;
+  text-decoration: none;
+  border-radius: 5px;
+  color: rgb(0, 0, 0);
+  background: linear-gradient(to right, #b4e3f1ad, #4acad3be, #b4f6ff9f);
+  border: 1px solid rgb(0, 89, 105);
+  backdrop-filter: blur(80px); /* Adjust the blur value as needed */
+}
+
+
+.cyan-card:hover {
+  box-shadow: black;
+}
+
+.copyright {
+  content: "";
+  position: absolute;
+  margin-bottom: 50px;
+  left: 0;
+  width: 100vw;
+  height: 2px;
+  background-color: white;
+}
+
+
+/* .footer {
+  padding-top: 90vh;
+} */

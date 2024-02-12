@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
 import './Navbar.css';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 
 const Navbar = () => {
   const [showNavbar, setShowNavbar] = useState(false);
+  const location = useLocation();
 
   const handleShowNavbar = () => {
     setShowNavbar(!showNavbar);
@@ -21,21 +22,18 @@ const Navbar = () => {
           <Hamburger />
         </div>
         <div className={`nav-elements ${showNavbar && "active"}`}>
-          <ul>
+          <ul>  
             <li>
-              <Link to="/">Home</Link>
+              <Link className={location.pathname === '/' ? 'active-link' : ''} onClick={handleShowNavbar} to="/">Home</Link>
             </li>
             <li>
-              <Link to="/products">Products</Link>
-            </li>
-            {/* <li>
-              <Link to="/projects"></Link>
-            </li> */}
-            <li>
-              <Link to="/about">About</Link>
+              <Link className={location.pathname === '/products' ? 'active-link' : ''} onClick={handleShowNavbar} to="/products">Products</Link>
             </li>
             <li>
-              <Link to="/contact">Contact</Link>
+              <Link className={location.pathname === '/about' ? 'active-link' : ''}  onClick={handleShowNavbar} to="/about">About</Link>
+            </li>
+            <li>
+              <Link  className={location.pathname === '/contact' ? 'active-link' : ''}  onClick={handleShowNavbar} to="/contact">Contact</Link>
             </li>
           </ul>
         </div>
