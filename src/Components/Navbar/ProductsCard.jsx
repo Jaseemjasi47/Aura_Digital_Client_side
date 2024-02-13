@@ -50,9 +50,9 @@ function ProductsCard({ products }) {
                   <p className="card-text" style={{ fontSize: ".9rem" }}>
                     Price: ₹{product.price}
                   </p>
-                  <p className="card-text" style={{ fontSize: ".8rem" }}>
+                  {/* <p className="card-text" style={{ fontSize: ".8rem" }}>
                     {product.description}
-                  </p>
+                  </p> */}
                 </div>
               </Link>
               <a

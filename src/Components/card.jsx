@@ -2,7 +2,7 @@ import React from 'react';
 
 function QuoteCard() {
   return (
-    <div className="card my-3 cyan-card">
+    <div className="card m-3 cyan-card">
       <div className="card-header">Premium Mobile Covers</div>
       <div className="card-body">
         <blockquote className="blockquote mb-0">

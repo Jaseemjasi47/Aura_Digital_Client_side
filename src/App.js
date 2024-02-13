@@ -8,13 +8,14 @@ import Contact from './Pages/Contact';
 import Login from './Pages/Login';
 import SingleProduct from './Pages/SingleProduct';
 import Footer from './Components/Footer';
+import Bottombar from './Components/Navbar/Bottombar';
 
 function App() {
   return (
     <Router>
       <>
         <Navbar />
-        <div className="app">
+        <div className="app bottom-gap">
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/Products" element={<Products />} />
@@ -27,7 +28,8 @@ function App() {
             {/* <Route path="/admin" element={<AdminProtected><Admin /></AdminProtected>} /> */}
           </Routes>
         </div>
-        <Footer/>
+        <Footer />
+        <Bottombar/>
         {/* <ScrollToTopButton/> */}
       </>
     </Router>

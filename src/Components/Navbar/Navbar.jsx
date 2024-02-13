@@ -11,7 +11,7 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="navbar">
+    <nav className="navbar gradient-bg">
       <div className="container">
         <div>
           {/* Assuming you have a Logo component */}

@@ -2,7 +2,7 @@ import React from 'react';
 
 function Footer() {
   return (
-    <footer className="text-center bg-body-tertiary footer" style={{ backgroundColor: '#002130',  color: 'white'}}>
+    <footer className="text-center bg-body-tertiary footer" style={{ backgroundColor: 'black',  color: 'white'}}>
       <div className="pt-2">
         {/* Section: Social media */}
         <section className="m-4">
@@ -20,7 +20,7 @@ function Footer() {
         {/* Section: Social media */}
       </div>
       <div className="copyright"></div>
-      <div className="text-center p-3" style={{ backgroundColor: '#002130',  color: 'white'}}>
+      <div className="text-center p-3" style={{ backgroundColor: 'black',  color: 'white'}}>
         © 2024 Copyright
       </div>
       {/* Copyright */}
