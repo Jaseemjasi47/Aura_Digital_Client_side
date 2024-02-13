@@ -9,6 +9,7 @@ import Login from './Pages/Login';
 import SingleProduct from './Pages/SingleProduct';
 import Footer from './Components/Footer';
 import Bottombar from './Components/Navbar/Bottombar';
+import ColorChanger from './Components/ColorChanger';
 
 function App() {
   return (
@@ -27,6 +28,7 @@ function App() {
             {/* Protected admin routes */}
             {/* <Route path="/admin" element={<AdminProtected><Admin /></AdminProtected>} /> */}
           </Routes>
+        <ColorChanger/>
         </div>
         <Footer />
         <Bottombar/>

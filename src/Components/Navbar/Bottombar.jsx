@@ -8,7 +8,7 @@ function Bottombar() {
   const location = useLocation();
 
   return (
-    <div className='bottom-bar'>
+    <div className='bottom-bar bg'>
       <Link className={`bottom-icon ${location.pathname === '/' ? 'active' : ''}`} to="/">
         <FontAwesomeIcon icon={faHome} />
       </Link>

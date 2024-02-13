@@ -8,7 +8,7 @@ function Home() {
     <div className="">
       <Banner />
       <div className=" mt-3">
-        <div className="sticky-form gradient-bg">
+        <div className="sticky-form bg">
           <form className="d-flex">
             <input
               className="form-control me-2"
