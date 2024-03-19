@@ -4,7 +4,7 @@ import Carousel from 'react-bootstrap/Carousel';
 
 const data = [
   {
-   image: require('../../Images/img1.jpg'), 
+   image: require('../../Images/img1.png'), 
    caption:"Aura Digitals",
    description:"Our premium Products"
   },

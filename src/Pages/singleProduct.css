@@ -1,3 +1,7 @@
+.sp {
+    overflow-x: hidden;
+}
+
 .product-image {
     max-width: 100%;
     height: 300px;
@@ -13,3 +17,93 @@
     background-color: rgba(255, 255, 255, 0.377);
     backdrop-filter: blur(15px);
 }
+
+.selected-image {
+    border: 2px solid rgba(78, 78, 78, 0.534);
+    padding: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+.act-price {
+    font-size: 1rem;
+    font-weight: bolder;
+}
+
+.dis-price {
+    font-size: .8rem;
+}
+
+.sp-rating-show {
+  color: white;
+  padding: 0 5px;
+  padding-top: 2px;
+  margin: 6px;
+  font-size: .8rem;
+  cursor: pointer;
+  border-radius: 5px;
+  background: rgb(0, 211, 0);
+}
+
+@keyframes bounceDown {
+    from {
+      transform: translateY(-3px);
+    }
+    to {
+      transform: translateY(0);
+    }
+  }
+
+.sp-btn {
+  padding: 4px;
+  width: 300px;
+  text-decoration: none;
+  border-radius: 5px;
+  color: rgb(255, 255, 255);
+  background-color: #000000d2;
+  border: 1px solid rgb(168, 168, 168);
+  user-select: none;
+  margin: 0 5px;
+}
+
+.sp-btn:hover {
+  color: rgb(0, 0, 0);
+  background-color: rgb(255, 255, 255);
+}
+
+
+.sp-wishlist-icon {
+  position: absolute;
+  opacity: 0.8;
+  right: 0;
+  padding: 0 5px;
+  padding-top: 2px;
+  scale: 1.3;
+  margin: 15px;
+  cursor: pointer;
+  border-radius: 20%;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+  transition: ease-in-out;
+}
+
+.sp-wishlist-icon:hover {
+  /* scale: 1.4; */
+  opacity: 1;
+}
+
+.show-more-btn {
+  padding: 4px 0;
+  /* width: 100px; */
+  text-decoration: none;
+  border-radius: 5px;
+  color: rgb(0, 0, 0);
+  background-color: rgb(245, 245, 245);
+  border: .5px solid rgba(179, 179, 179, 0.692);
+  text-align: center;
+  user-select: none;
+  /* margin: 0 2px; */
+}
+
+/* .show-more-btn:hover {
+  color: rgb(0, 0, 0);
+  background-color: rgb(255, 255, 255);
+} */
