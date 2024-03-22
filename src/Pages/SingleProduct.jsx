@@ -8,6 +8,7 @@ import { faStar as faStarSolid } from "@fortawesome/free-solid-svg-icons";
 import { useCart } from "../Components/Navbar/CartContext";
 import { Link } from "react-router-dom";
 
+
 function SingleProduct() {
 
   useEffect(() => {
@@ -107,7 +108,7 @@ function SingleProduct() {
                         style={{ width: "10px", marginLeft: "5px" }}
                       />
                     </span>
-                    <h5 className="text-uppercase ff-curlz-mt">
+                    <h5 className="text-uppercase">
                       {product.name}
                     </h5>
                     <div className="price d-flex flex-row align-items-center">

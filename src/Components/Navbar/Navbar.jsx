@@ -1,6 +1,9 @@
 import React, { useState } from 'react';
 import './Navbar.css';
 import { Link, useLocation } from 'react-router-dom';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faUser, faCartShopping } from '@fortawesome/free-solid-svg-icons';
+import { faHeart as faHeartSolid } from "@fortawesome/free-solid-svg-icons";
 
 const Navbar = () => {
   const [showNavbar, setShowNavbar] = useState(false);
@@ -15,7 +18,7 @@ const Navbar = () => {
     <nav className="navbar bg">
       <div className="container">
         <div>
-          <img className='logo' src='img/Logo.png' />
+          <img className='nav-logo' src='img/Logo.png' />
         </div>
 
         <form className="d-flex scale-in-center h-search">
@@ -38,7 +41,9 @@ const Navbar = () => {
             </svg>
             </button>
           </form>
-        
+        <Link to='/wishlist' className={`nav-icon ${location.pathname === '/wishlist' ? 'nav-icon-active' : ''}`}>Wishlist<FontAwesomeIcon icon={faHeartSolid} className="mx-1" /></Link>
+        <Link to="/Cart" className={`nav-icon ${location.pathname === '/Cart' ? 'nav-icon-active' : ''}`}>Cart<FontAwesomeIcon icon={faCartShopping} className="bubbling mx-1" /></Link>
+        <Link to="/account" className={`nav-icon ${location.pathname === '/account' ? 'nav-icon-active' : ''}`}><FontAwesomeIcon icon={faUser} className="mx-1" /></Link>
         <div className="menu-icon" onClick={handleShowNavbar}>
           {/* Assuming you have a Hamburger component */}
           <Hamburger />

@@ -20,13 +20,17 @@ import SubCategory from "./Pages/SubCategory";
 import UserProfile from "./Pages/UserProfile";
 import SignUp from "./Pages/SignUp";
 import CheckOut from "./Pages/CheckOut";
+import Wishlist from "./Pages/Wishlist";
+import LoginModal from "./Components/Login/Signup/LoginModal";
 
 function App() {
+
   return (
     <>
       <Router>
         <CartProvider>
           <Navbar />
+          <LoginModal />
           <Toaster position="top-center" />
           <div className="app bottom-gap top-gap">
             <Routes>
@@ -39,8 +43,9 @@ function App() {
               <Route path="/signup" element={<SignUp />} />
               <Route path="/Product" element={<SingleProduct />} />
               <Route path="/Cart" element={<Cart />} />
+              <Route path="/wishlist" element={<Wishlist />} />
               <Route path="/checkout" element={<CheckOut />} />
-              <Route path="/profile" element={<UserProfile />} />
+              <Route path="/account" element={<UserProfile />} />
 
               {/* Protected admin routes */}
               {/* <Route path="/admin" element={<AdminProtected><Admin /></AdminProtected>} /> */}

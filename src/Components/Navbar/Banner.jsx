@@ -5,22 +5,22 @@ import Carousel from 'react-bootstrap/Carousel';
 const data = [
   {
    image: require('../../Images/img1.png'), 
-   caption:"Aura Digitals",
+   caption:"GoBuyGet",
    description:"Our premium Products"
   },
   {
     image: require('../../Images/img2.jpg'), 
-    caption:"Aura Digitals",
+    caption:"GoBuyGet",
     description:"Our premium Products"
    }, 
    {
     image: require('../../Images/img3.jpg'), 
-    caption:"Aura Digitals",
+    caption:"GoBuyGet",
     description:"Our premium Products"
    },
    {
      image: require('../../Images/img4.jpg'), 
-     caption:"Aura Digitals",
+     caption:"GoBuyGet",
      description:"Our premium Products"
     }
 ]
@@ -32,7 +32,7 @@ function Banner() {
     };
   
     return (
-      <Carousel activeIndex={index} onSelect={handleSelect}>
+      <Carousel activeIndex={index} onSelect={handleSelect} >
          {data.map((slide, i) => {
           return (
             <Carousel.Item>        

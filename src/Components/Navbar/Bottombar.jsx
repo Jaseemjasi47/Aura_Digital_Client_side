@@ -32,7 +32,7 @@ function Bottombar() {
       {bubbling && <div className="notify bubbling">{cartCount}</div>}
         <FontAwesomeIcon icon={faShoppingCart} />
       </Link>
-      <Link className={`bottom-icon ${location.pathname === '/profile' ? 'active  bubbling' : ''}`} to="/profile">
+      <Link className={`bottom-icon ${location.pathname === '/account' ? 'active  bubbling' : ''}`} to="/account">
         <FontAwesomeIcon icon={faUser} />
       </Link>
     </div>
