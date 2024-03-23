@@ -47,7 +47,7 @@ function App() {
         ) : (
           <CartProvider>
             <Navbar />
-            {/* <LoginModal /> */}
+            <LoginModal />
             <Toaster position="top-center" />
             <div className="app bottom-gap top-gap">
               <Routes>
