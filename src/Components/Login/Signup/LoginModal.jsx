@@ -66,7 +66,7 @@ function LoginModal() {
                 Sign In
               </div>
             </form>
-            <div>I Don't have a account, </div>
+            <div>Don't have an account yet! </div>
               <Link to="/signup">Create new Account?</Link>
           </div>
           <div className="lm-close" onClick={closeModal}>

@@ -43,7 +43,7 @@ const Navbar = () => {
           </form>
         <Link to='/wishlist' className={`nav-icon ${location.pathname === '/wishlist' ? 'nav-icon-active' : ''}`}>Wishlist<FontAwesomeIcon icon={faHeartSolid} className="mx-1" /></Link>
         <Link to="/Cart" className={`nav-icon ${location.pathname === '/Cart' ? 'nav-icon-active' : ''}`}>Cart<FontAwesomeIcon icon={faCartShopping} className="bubbling mx-1" /></Link>
-        <Link to="/account" className={`nav-icon ${location.pathname === '/account' ? 'nav-icon-active' : ''}`}><FontAwesomeIcon icon={faUser} className="mx-1" /></Link>
+        <Link to="/account" className={`nav-icon ${location.pathname === '/account' ? 'nav-icon-active' : ''}`}>Log In<FontAwesomeIcon icon={faUser} className="mx-1" /></Link>
         <div className="menu-icon" onClick={handleShowNavbar}>
           {/* Assuming you have a Hamburger component */}
           <Hamburger />

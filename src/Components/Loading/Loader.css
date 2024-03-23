@@ -9,6 +9,7 @@
     align-items: center;
     z-index: 1000;
     text-align: center;
+    /* background-color: black; */
   }
   
   .loader-inner {
@@ -33,6 +34,11 @@
       /* color: rgb(59, 59, 59); */
     animation-delay: 1s; /* Delay the animation of 'O' by 1 second */
   }
+
+.gobuyget-loading {
+  width: 100px;
+  animation: zoomInOut 1.3s infinite alternate ease-in-out;
+}
   
   @keyframes zoomInOut {
     0% {
@@ -41,8 +47,8 @@
       /* color: black; */
     }
     50% {
-      opacity: 0;
-      transform: scale(0);
+      opacity: 0.3;
+      transform: scale(0.9);
     }
     100% {
       opacity: 1;
