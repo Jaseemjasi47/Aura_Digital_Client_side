@@ -10,6 +10,7 @@ import { faCartPlus } from "@fortawesome/free-solid-svg-icons";
 import { faShop } from "@fortawesome/free-solid-svg-icons";
 import { useCart } from './CartContext';
 import popSound from '../../Sounds/heartpop.mp3'
+import MarketLabel from "../Labels/MarketLabel";
 
 function ProductsCard({ products }) {
   const [wishlist, setWishlist] = useState([]);
@@ -59,7 +60,7 @@ function ProductsCard({ products }) {
                   alt={product.name}
                 />
                 <div className="px-2">
-                  <div style={{ fontSize: ".9rem" }}>
+                  <div className="text-short-1">
                     {product.name}
                   </div>
                   <div style={{ fontSize: ".7rem" }}>
@@ -80,8 +81,7 @@ function ProductsCard({ products }) {
                       </div>
                     Price: ₹{product.price}
                   </div>
-                  <div className="label-market"><FontAwesomeIcon icon={faShop} className="label-market-logo" />Market</div>
-                  <div className="label-goexpress">Go express</div>
+                  <MarketLabel type={product.market}/>
                 </div>
               </Link>
               <FontAwesomeIcon icon={faCartPlus} onClick={addToCart} className="add-to-cart-icon bubbling" />

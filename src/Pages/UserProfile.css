@@ -12,9 +12,7 @@
     margin: 0 10px;
 }
 
-.green {
-    color: green;
-}
+
 
 .curve-border-b {
     margin: 5px;
@@ -23,10 +21,7 @@
     border-radius: 15px;
 }
 
-.sub-title {
-    color: rgb(97, 97, 97);
-    font-size: .8rem;
-}
+
 
 .login-signup {
     background-color: rgb(17, 17, 17);
@@ -36,3 +31,5 @@
     font-weight: lighter;
     width: fit-content;
 }
+
+

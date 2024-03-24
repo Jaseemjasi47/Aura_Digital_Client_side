@@ -4,7 +4,7 @@ import notificationSound from '../../Sounds/notification.mp3';
 // import { toast } from "react-toastify";
 import { toast } from 'sonner'
 
-const notify = (message) => {
+export const notify = (message) => {
   // const audio = new Audio(notificationSound);
   // audio.play();
   toast.success(message, {

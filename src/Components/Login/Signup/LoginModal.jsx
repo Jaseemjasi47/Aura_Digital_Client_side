@@ -14,7 +14,7 @@ function LoginModal() {
 
     const timer = setTimeout(() => {
       setModalOpen(true);
-    }, 15000);
+    }, 25000);
 
     return () => clearTimeout(timer);
   };
