@@ -7,10 +7,12 @@ import { faHeart as faHeartSolid } from "@fortawesome/free-solid-svg-icons";
 import { faStar as faStarSolid } from "@fortawesome/free-solid-svg-icons";
 import { useCart } from "../Components/Navbar/CartContext";
 import { Link } from "react-router-dom";
+import Reviews from "../Components/Reviews/Reviews";
+import RatingStars from "../Components/Reviews/RatingStars";
+import ImageSlider from "../Components/ImageSlider";
 
 
 function SingleProduct() {
-
   useEffect(() => {
     window.scrollTo(0, 0); // Scroll to the top when component mounts
   }, []);
@@ -38,6 +40,24 @@ function SingleProduct() {
     ],
   };
 
+  const data = [
+    {
+     image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRYXr7C7twVIC5aZ23Fnf69k4Y2QA8M_t4JrIncNPFd0_JVbLkJDOso2w2rD0Sp6xUFh3g&usqp=CAU', 
+    //  caption:"GoBuyGet",
+    //  description:"Our premium Products"
+    },
+    {
+      image: "https://cagau.com/wp-content/uploads/2022/07/RX000108-Rolex-Sky-Dweller-42-Oystersteel-White-Gold-Blue-Dial-326933-1-min-1.jpg", 
+      // caption:"GoBuyGet",
+      // description:"Our premium Products"
+     }, 
+     {
+      image: "https://cagau.com/wp-content/uploads/2022/07/RX000108-Rolex-Sky-Dweller-42-Oystersteel-White-Gold-Blue-Dial-326933-2-min-1.jpg", 
+      // caption:"GoBuyGet",
+      // description:"Our premium Products"
+     }
+  ]
+
   const [mainImage, setMainImage] = useState(product.images[0]);
 
   const changeImage = (imageSrc) => {
@@ -52,7 +72,7 @@ function SingleProduct() {
     : descriptionWords.slice(0, 50).join(" ");
 
   return (
-    <div className="sp">
+    <div className="sp ">
       <div className="row d-flex justify-content-center">
         <div className="">
           <div className="card">
@@ -69,16 +89,20 @@ function SingleProduct() {
             </div>
             <div className="row">
               <div className="col-md-6 scale-in-center ">
-                <div className="images p-3">
-                  <div className="text-center p-4">
-                    <img
+                <div className="images p-2">
+                  <div className="text-center pb-2">
+                    <ImageSlider data={data}/>
+                  
+
+                    {/* <img
                       id="main-image"
                       src={mainImage}
-                      width="250"
+                      width="370"
                       alt="Main"
-                    />
+                    /> */}
                   </div>
-                  <div className="thumbnail text-center">
+
+                  {/* <div className="thumbnail text-center">
                     {product.images.map((image, index) => (
                       <img
                         key={index}
@@ -91,26 +115,26 @@ function SingleProduct() {
                         alt={`Thumbnail ${index + 1}`}
                       />
                     ))}
-                  </div>
+                  </div> */}
+
                 </div>
               </div>
               <div className="col-md-6 slide-in-bottom ">
                 <div className="product p-4">
                   <div className="mt-1 mb-3">
                     {" "}
-                    <span className="text-uppercase text-muted brand">
+                    <div className="text-uppercase text-muted brand">
                       {product.brand}
-                    </span>
-                    <span className="sp-rating-show">
-                      {product.rating}
-                      <FontAwesomeIcon
+                    </div>
+                    <div className="d-flex sub-title my-1">
+                      <RatingStars rating={product.rating} />
+                      <div className=" mx-1"> {product.rating}</div>
+                      {/* <FontAwesomeIcon
                         icon={faStarSolid}
                         style={{ width: "10px", marginLeft: "5px" }}
-                      />
-                    </span>
-                    <h5 className="text-uppercase">
-                      {product.name}
-                    </h5>
+                      /> */}
+                    </div>
+                    <h5 className="text-uppercase">{product.name}</h5>
                     <div className="price d-flex flex-row align-items-center">
                       {" "}
                       <div className="ml-2">
@@ -134,7 +158,8 @@ function SingleProduct() {
                   <div>
                     <p className="about ff-verdana">{shortenedDescription}</p>
                     {descriptionWords.length > 50 && (
-                      <div className="show-more-btn"
+                      <div
+                        className="show-more-btn"
                         onClick={() =>
                           setShowFullDescription(!showFullDescription)
                         }
@@ -186,13 +211,19 @@ function SingleProduct() {
                     >
                       Add to cart
                     </button>{" "}
-                    <Link to='/checkout' className="sp-btn text-uppercase text-center">Buy Now</Link>
+                    <Link
+                      to="/checkout"
+                      className="sp-btn text-uppercase text-center"
+                    >
+                      Buy Now
+                    </Link>
                   </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
+        {/* <Reviews /> */}
       </div>
     </div>
   );

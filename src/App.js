@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "./App.css";
 import "./Style/Animations.css";
+import "./Style/Admin.css";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
@@ -24,6 +25,9 @@ import CheckOut from "./Pages/CheckOut";
 import Wishlist from "./Pages/Wishlist";
 import LoginModal from "./Components/Login/Signup/LoginModal";
 import Loader from "./Components/Loading/Loader";
+import { AuthProvider } from "./Context/AuthProvider";
+import { SearchProvider } from "./Context/SearchProvider";
+import SearchResult from "./Pages/SearchResult";
 
 function App() {
   const [loading, setLoading] = useState(true);
@@ -45,6 +49,8 @@ function App() {
           // Render loading indicator while loading is true
           <Loader/>
         ) : (
+          <AuthProvider>
+          <SearchProvider>
           <CartProvider>
             <Navbar />
             {/* <LoginModal /> */}
@@ -63,6 +69,7 @@ function App() {
                 <Route path="/wishlist" element={<Wishlist />} />
                 <Route path="/checkout" element={<CheckOut />} />
                 <Route path="/account" element={<UserProfile />} />
+                <Route path="/search" element={<SearchResult />} />
 
                 {/* Protected admin routes */}
                 {/* <Route path="/admin" element={<AdminProtected><Admin /></AdminProtected>} /> */}
@@ -72,6 +79,8 @@ function App() {
             <Footer />
             <Bottombar />
           </CartProvider>
+          </SearchProvider>
+          </AuthProvider>
         )}
         {/* <ScrollToTopButton/> */}
       </Router>

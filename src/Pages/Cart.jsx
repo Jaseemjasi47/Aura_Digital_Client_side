@@ -1,12 +1,7 @@
 import React, { useEffect } from "react";
 import SearchBar from "../Components/SearchBar";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faShop } from "@fortawesome/free-solid-svg-icons";
-import { faTruck } from "@fortawesome/free-solid-svg-icons";
 import HorizontalScrollableProducts from "../Components/Navbar/HorizontalScrollableProducts";
 import products from "../Data/products";
-import { faTrashCan } from "@fortawesome/free-regular-svg-icons";
-import { Link } from "react-router-dom";
 import { notify } from "../Components/Notify";
 import CartItem from "../Components/Cart/CartItem";
 

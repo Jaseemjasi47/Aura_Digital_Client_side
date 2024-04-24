@@ -1,0 +1,15 @@
+/* .rating {
+    font-size: 24px;
+  } */
+  
+  .star {
+    cursor: pointer;
+    color: rgb(102, 102, 102);
+    width: 12px;
+    margin: 1px;
+  }
+  
+  .star-filled {
+    color: gold !important; /* Color for filled stars */
+  }
+  

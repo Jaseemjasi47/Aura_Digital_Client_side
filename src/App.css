@@ -57,6 +57,7 @@ background: linear-gradient(to left, #243B55, #141E30); */
 
 .App {
   text-align: center;
+  overflow-x: hidden;
 }
 
 .bg {
@@ -64,6 +65,10 @@ background: linear-gradient(to left, #243B55, #141E30); */
   background-color: rgb(255, 219, 17);
   background: linear-gradient(to bottom, #ffd900, #ffbb00);
 
+}
+
+.overflow-x {
+  overflow-x: hidden !important;
 }
 
 /* -------------------------------------------- Colors --------------------------------------------- */
