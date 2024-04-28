@@ -30,6 +30,7 @@ export const CartProvider = ({ children }) => {
   const resetCart = () => {
     setCartCount(0);
     localStorage.setItem('cartCount', '0');
+    notify('Removed All Items')
   };
 
   return (

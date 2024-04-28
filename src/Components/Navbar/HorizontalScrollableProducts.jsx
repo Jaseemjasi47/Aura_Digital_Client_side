@@ -7,6 +7,7 @@ import { faHeart as faHeartSolid } from "@fortawesome/free-solid-svg-icons";
 import { faStar as faStarSolid } from "@fortawesome/free-solid-svg-icons";
 import { faCartPlus } from "@fortawesome/free-solid-svg-icons";
 import { useCart } from "./CartContext";
+import { useWishList } from "../../Context/WishList";
 import MarketLabel from "../Labels/MarketLabel";
 import { HorizontalScrollableProductsLoading } from "../Loading/Loading";
 
@@ -15,12 +16,14 @@ function HorizontalScrollableProducts({ products }) {
   const [loading, setLoading] = useState(true);
 
   const { addToCart } = useCart();
+  const { addToWishList } = useWishList();
 
   const toggleWishlist = (index) => {
     if (wishlist.includes(index)) {
       setWishlist(wishlist.filter((item) => item !== index));
     } else {
       setWishlist([...wishlist, index]);
+      addToWishList();
     }
   };
 

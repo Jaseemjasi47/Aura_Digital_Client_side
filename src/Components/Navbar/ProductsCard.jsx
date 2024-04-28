@@ -9,6 +9,7 @@ import { faStar as faStarSolid } from "@fortawesome/free-solid-svg-icons";
 import { faCartPlus } from "@fortawesome/free-solid-svg-icons";
 import { faShop } from "@fortawesome/free-solid-svg-icons";
 import { useCart } from './CartContext';
+import { useWishList } from "../../Context/WishList";
 import popSound from '../../Sounds/heartpop.mp3'
 import MarketLabel from "../Labels/MarketLabel";
 
@@ -16,6 +17,9 @@ function ProductsCard({ products }) {
   const [wishlist, setWishlist] = useState([]);
   // const [cartCount, setCartCount] = useState(parseInt(localStorage.getItem('cartCount')) || 0);
   const audio = new Audio(popSound);
+  
+  const { addToCart } = useCart();
+  const { addToWishList } = useWishList();
 
   const toggleWishlist = (index) => {
     if (wishlist.includes(index)) {
@@ -23,10 +27,10 @@ function ProductsCard({ products }) {
     } else {
       audio.play();
       setWishlist([...wishlist, index]);
+      addToWishList();
     }
   };
 
-  const { addToCart } = useCart();
 
 
   return (

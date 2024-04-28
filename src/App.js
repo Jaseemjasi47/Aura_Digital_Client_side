@@ -28,6 +28,7 @@ import Loader from "./Components/Loading/Loader";
 import { AuthProvider } from "./Context/AuthProvider";
 import { SearchProvider } from "./Context/SearchProvider";
 import SearchResult from "./Pages/SearchResult";
+import { WishListProvider } from "./Context/WishList";
 
 function App() {
   const [loading, setLoading] = useState(true);
@@ -52,6 +53,7 @@ function App() {
           <AuthProvider>
           <SearchProvider>
           <CartProvider>
+          <WishListProvider>
             <Navbar />
             {/* <LoginModal /> */}
             <Toaster position="top-center" />
@@ -78,6 +80,7 @@ function App() {
             </div>
             <Footer />
             <Bottombar />
+            </WishListProvider>
           </CartProvider>
           </SearchProvider>
           </AuthProvider>
