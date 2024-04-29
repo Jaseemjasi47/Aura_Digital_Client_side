@@ -5,6 +5,7 @@ import "./UserProfile.css";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUser, faEnvelope } from '@fortawesome/free-regular-svg-icons';
 import { faWhatsapp } from '@fortawesome/free-brands-svg-icons';
+import Footer from "../Components/Footer";
 
 function UserProfile() {
   return (
@@ -24,16 +25,17 @@ function UserProfile() {
         <div className="sub-title">
           HELP CENTER
         </div>
-          <div className="link-help"><FontAwesomeIcon icon={faWhatsapp} className="mx-2 green" />whatsapp</div>
+          <div className="link-help"><a className="link" href="https://wa.me/917994557885"><FontAwesomeIcon icon={faWhatsapp} className="mx-2 green" />whatsapp</a></div>
           </div>
         <div className="curve-border-b">
         <div className="sub-title">
           EMAIL SUPPORT
           </div>
-          <div className="link-help"> <FontAwesomeIcon icon={faEnvelope} className="mx-2" />caregobuyget@gmail.com</div>
+          <div className="link-help"> <a className="link" href="mailto:caregobuyget@gmail.com"><FontAwesomeIcon icon={faEnvelope} className="mx-2" />caregobuyget@gmail.com</a></div>
       </div>
         </div>
       </div>
+      <Footer/>
     </div>
     // <div>
     //   <Loading/>

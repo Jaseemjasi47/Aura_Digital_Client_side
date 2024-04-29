@@ -7,6 +7,7 @@ import ProductsCard from '../Components/Navbar/ProductsCard';
 import SearchBar from "../Components/SearchBar";
 import HorizontalCategory from "../Components/Menu/HorizontalCategory";
 import products from "../Data/products";
+import Footer from "../Components/Footer";
 
 function Home() {
 
@@ -27,6 +28,7 @@ function Home() {
         </div>
         <ProductsCard products={products} />
       </div>
+      <Footer/>
     </div>
   );
 }

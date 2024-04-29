@@ -6,7 +6,7 @@ import { faInstagram, faLinkedin, faYoutube } from '@fortawesome/free-brands-svg
 import { faFacebook } from '@fortawesome/free-brands-svg-icons';
 
 
-const Footer = () => {
+function Footer() {
   // Define categories
   const categories = {
     "ELECTRONICS": [

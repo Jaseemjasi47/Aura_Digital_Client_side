@@ -13,7 +13,6 @@ import About from "./Pages/About";
 import Contact from "./Pages/Contact";
 import Login from "./Pages/Login";
 import SingleProduct from "./Pages/SingleProduct";
-import Footer from "./Components/Footer";
 import Bottombar from "./Components/Navbar/Bottombar";
 import ColorChanger from "./Components/ColorChanger";
 import { CartProvider } from "./Components/Navbar/CartContext";
@@ -78,7 +77,6 @@ function App() {
               </Routes>
               {/* <ColorChanger/> */}
             </div>
-            <Footer />
             <Bottombar />
             </WishListProvider>
           </CartProvider>

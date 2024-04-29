@@ -67,7 +67,7 @@ function Cart() {
 
   return (
     <div>
-      <SearchBar />
+      {/* <SearchBar /> */}
 
       {cartCount === 0 ? (
         <>
@@ -118,9 +118,10 @@ function Cart() {
           </div>
         </div>
       )}
-
+      <div className="pb-3">
       <h3 className="my-3 px-3">Bestsellers for you</h3>
       <HorizontalScrollableProducts products={products} />
+      </div>
 
       <div className="cart-buy-button">
         <div className="d-flex justify-content-around border-top center green p-2">

@@ -51,7 +51,7 @@ function CartItem({ cartProducts }) {
               Remove
             </div>
             <div className="border-right"></div>
-            <div className="p-2 "><FontAwesomeIcon icon={faBolt} className="px-2" />Buy this now</div>
+            <Link to="/checkout" className="p-2 link"><FontAwesomeIcon icon={faBolt} className="px-2" />Buy this now</Link>
           </div>
         </div>
       ))}
