@@ -10,6 +10,11 @@ import { Link } from "react-router-dom";
 import Reviews from "../Components/Reviews/Reviews";
 import RatingStars from "../Components/Reviews/RatingStars";
 import ImageSlider from "../Components/ImageSlider";
+import HorizontalScrollableProducts from "../Components/Navbar/HorizontalScrollableProducts";
+import products from "../Data/products";
+import MarketLabel from "../Components/Labels/MarketLabel";
+import Size from "../Components/SingleProduct/Size";
+import Variant from "../Components/SingleProduct/Variant";
 
 function SingleProduct() {
   useEffect(() => {
@@ -24,47 +29,23 @@ function SingleProduct() {
 
   const product = {
     id: 1,
-    name: "Rolex Sky-Dweller - 42 mm - Oystersteel & Gold, Blue Dial",
-    brand: "Rolex",
-    price: "₹199999",
-    discountPrice: "₹299999",
-    discount: "35%",
+    name: "Samsung Galaxy S24 Ultra 5G AI Smartphone (Titanium Violet, 12GB, 256GB Storage)",
+    brand: "Samsung",
+    price: "1,29,998",
+    discountPrice: "1,34,999",
+    discount: "4%",
     rating: "4.7",
-    description:
-      "This Rolex Sky-Dweller model ref:326934 is a self-winding automatic watch, featuring a 42 mm Oystersteel and white gold case, white gold fluted bezel with a bright blue dial. The dial features center hour, minute, and seconds hands to indicate the local time. Furthermore, it is fitted with an off-centered 24-hour disc that indicates an alternative time zone. This watch is fitted with an Oystersteel and white gold Jubilee bracelet with an Oysterlock safety clasp and is equipped with the Rolex patented adjustable comfort link system that allows the wearer to increase the bracelet length by approximately 5 mm. This unworn watch comes with the original box and papers, a 2-year Cagau warranty, and the time remaining on the manufacturer’s warranty.",
+    market: "go",
+    description: `Meet Galaxy S24 Ultra, the ultimate form of Galaxy Ultra with a new titanium exterior and a 17.25cm (6.8") flat display. It's an absolute marvel of design. The legacy of Galaxy Note is alive and well. Write, tap and navigate with precision your fingers wish they had on the new, flat display. With the most megapixels on a smartphone and AI processing, Galaxy S24 Ultra sets the industry standard for image quality every time you hit the shutter. What's more, the new ProVisual engine recognizes objects — improving colour tone, reducing noise and bringing out detail. A new way to search is here with Circle to Search. While scrolling your fav social network, use your S Pen or finger to circle something and get Google Search results. Victory can be yours with the new Snapdragon 8 Gen 3 for Galaxy. Faster processing gives you the power you need for all the gameplay you want. Then, manifest graphic effects in real time with ray tracing for hyper-realistic shadows and reflections.`,
     images: [
-      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRYXr7C7twVIC5aZ23Fnf69k4Y2QA8M_t4JrIncNPFd0_JVbLkJDOso2w2rD0Sp6xUFh3g&usqp=CAU",
-      "https://cagau.com/wp-content/uploads/2022/07/RX000108-Rolex-Sky-Dweller-42-Oystersteel-White-Gold-Blue-Dial-326933-1-min-1.jpg",
-      "https://cagau.com/wp-content/uploads/2022/07/RX000108-Rolex-Sky-Dweller-42-Oystersteel-White-Gold-Blue-Dial-326933-2-min-1.jpg",
+      "https://m.media-amazon.com/images/I/81lek2iav1L._SX679_.jpg",
+      "https://m.media-amazon.com/images/I/71JLhofuYJL._SX679_.jpg",
+      "https://m.media-amazon.com/images/I/71ZdFihN4YL._SX679_.jpg",
+      "https://m.media-amazon.com/images/I/71dRjlbYBlL._SX679_.jpg",
     ],
   };
 
-  const data = [
-    {
-      image:
-        "https://cagau.com/wp-content/uploads/2022/07/RX000108-Rolex-Sky-Dweller-42-Oystersteel-White-Gold-Blue-Dial-326933-2-min-1.jpg",
-      //  caption:"GoBuyGet",
-      //  description:"Our premium Products"
-    },
-    {
-      image:
-        "https://cagau.com/wp-content/uploads/2022/07/RX000108-Rolex-Sky-Dweller-42-Oystersteel-White-Gold-Blue-Dial-326933-1-min-1.jpg",
-      // caption:"GoBuyGet",
-      // description:"Our premium Products"
-    },
-    {
-      image:
-        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRYXr7C7twVIC5aZ23Fnf69k4Y2QA8M_t4JrIncNPFd0_JVbLkJDOso2w2rD0Sp6xUFh3g&usqp=CAU",
-      // caption:"GoBuyGet",
-      // description:"Our premium Products"
-    },
-  ];
-
-  // const [mainImage, setMainImage] = useState(product.images[0]);
-
-  // const changeImage = (imageSrc) => {
-  //   setMainImage(imageSrc);
-  // };
+  const imageSliderData = product.images.map((image) => ({ image }));
 
   const [showFullDescription, setShowFullDescription] = useState(false);
 
@@ -78,7 +59,7 @@ function SingleProduct() {
       <div className="sp ">
         <div className="row d-flex justify-content-center">
           <div className="">
-            <div className="card">
+            <div className="">
               <div
                 className="sp-wishlist-icon"
                 onClick={() => toggleWishlist()}
@@ -97,7 +78,7 @@ function SingleProduct() {
                 <div className="col-md-6 scale-in-center ">
                   <div className="images p-2">
                     <div className="text-center pb-2">
-                      <ImageSlider data={data} />
+                      <ImageSlider data={imageSliderData} />
 
                       {/* <img
                       id="main-image"
@@ -125,7 +106,7 @@ function SingleProduct() {
                 </div>
                 <div className="col-md-6 slide-in-bottom ">
                   <div className="product p-4">
-                    <div className="mt-1 mb-3">
+                    <div className="mt-1 mb-2">
                       {" "}
                       <div className="text-uppercase text-muted brand">
                         {product.brand}
@@ -138,7 +119,7 @@ function SingleProduct() {
                         style={{ width: "10px", marginLeft: "5px" }}
                       /> */}
                       </div>
-                      <h5 className="text-uppercase">{product.name}</h5>
+                      <h5 className="text-uppercase rem9">{product.name}</h5>
                       <div className="price d-flex flex-row align-items-center">
                         {" "}
                         <div className="ml-2">
@@ -153,15 +134,23 @@ function SingleProduct() {
                             {product.discount}
                           </span>
                           <span className="dis-price mx-2">
-                            M.R.P :<s>{product.discountPrice}</s>
+                            M.R.P : <s>₹{product.discountPrice}</s>
                           </span>
                         </div>
-                        <span className="act-price">{product.price}</span>
+                        <span className="act-price">₹{product.price}</span>
                       </div>
                     </div>
+                    <MarketLabel type={product.market} />
+
+                    <Variant />
+
+                    {/* <Size /> */}
+
                     <div>
-                      <h3>Product Details</h3>
-                      <p className="about ff-verdana">{shortenedDescription}</p>
+                      <div className="py-1">Product Details</div>
+                      <div className=" rem8 ff-verdana">
+                        {shortenedDescription}
+                      </div>
                       {descriptionWords.length > 50 && (
                         <div
                           className="show-more-btn"
@@ -173,44 +162,14 @@ function SingleProduct() {
                         </div>
                       )}
                     </div>
-
-                    {/* <div className="sizes mt-5">
-                    <h6 className="text-uppercase">Size</h6>{" "}
-                    <label className="radio">
-                      {" "}
-                      <input
-                        type="radio"
-                        name="size"
-                        value="S"
-                        defaultChecked
-                      />{" "}
-                      <span>S</span>{" "}
-                    </label>{" "}
-                    <label className="radio">
-                      {" "}
-                      <input type="radio" name="size" value="M" />{" "}
-                      <span>M</span>{" "}
-                    </label>{" "}
-                    <label className="radio">
-                      {" "}
-                      <input type="radio" name="size" value="L" />{" "}
-                      <span>L</span>{" "}
-                    </label>{" "}
-                    <label className="radio">
-                      {" "}
-                      <input type="radio" name="size" value="XL" />{" "}
-                      <span>XL</span>{" "}
-                    </label>{" "}
-                    <label className="radio">
-                      {" "}
-                      <input type="radio" name="size" value="XXL" />{" "}
-                      <span>XXL</span>{" "}
-                    </label>
-                  </div> */}
                   </div>
                 </div>
               </div>
             </div>
+          </div>
+          <div className="py-1">
+            <h3 className="p-1">Similar Products</h3>
+            <HorizontalScrollableProducts products={products} />
           </div>
           <Reviews />
         </div>
@@ -226,7 +185,6 @@ function SingleProduct() {
           </Link>
         </div>
       </div>
-
     </>
   );
 }

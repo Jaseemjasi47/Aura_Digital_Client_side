@@ -42,6 +42,10 @@ function CheckOut() {
   const [totalDiscount, setTotalDiscount] = useState(0);
 
   useEffect(() => {
+    window.scrollTo(0, 0); // Scroll to the top when component mounts
+  }, []);
+
+  useEffect(() => {
     let price = 0;
     let discount = 0;
     Products.forEach((product) => {
@@ -128,7 +132,7 @@ function CheckOut() {
         <div className="cart-buy-button">
         <div className="d-flex justify-content-between border-top center p-2 px-3">
           <div><div className="sub-title"><s>₹{totalPrice}</s></div><div>₹{payableAmount}</div></div>{" "}
-          <Link to="/checkout" className="p-btn">
+          <Link to="/payment" className="p-btn">
         Continue
       </Link>
         </div>

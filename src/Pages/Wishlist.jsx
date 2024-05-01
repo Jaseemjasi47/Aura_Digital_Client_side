@@ -29,6 +29,7 @@ function Wishlist() {
     discount: "35%",
     rating: "4.7",
     inCart: false,
+    market: "mrkt",
     description:
       "This Rolex Sky-Dweller model ref:326934 is a self-winding automatic watch, featuring a 42 mm Oystersteel and white gold case, white gold fluted bezel with a bright blue dial. The dial features center hour, minute, and seconds hands to indicate the local time. Furthermore, it is fitted with an off-centered 24-hour disc that indicates an alternative time zone. This watch is fitted with an Oystersteel and white gold Jubilee bracelet with an Oysterlock safety clasp and is equipped with the Rolex patented adjustable comfort link system that allows the wearer to increase the bracelet length by approximately 5 mm. This unworn watch comes with the original box and papers, a 2-year Cagau warranty, and the time remaining on the manufacturer’s warranty.",
     image:
@@ -41,6 +42,7 @@ function Wishlist() {
     discountPrice: "₹399", 
     discount: "35%", 
     rating:4.3, 
+    market: "go",
     inCart: true,
     image: "https://alshobbies.co.uk/image/cache/catalog/stockimage/lrc/c/C-TRX77086-4-ORNGX-250x250.jpg" 
   }];

@@ -28,6 +28,7 @@ import { AuthProvider } from "./Context/AuthProvider";
 import { SearchProvider } from "./Context/SearchProvider";
 import SearchResult from "./Pages/SearchResult";
 import { WishListProvider } from "./Context/WishList";
+import Payment from "./Pages/Payment";
 
 function App() {
   const [loading, setLoading] = useState(true);
@@ -71,6 +72,7 @@ function App() {
                 <Route path="/checkout" element={<CheckOut />} />
                 <Route path="/account" element={<UserProfile />} />
                 <Route path="/search" element={<SearchResult />} />
+                <Route path="/payment" element={<Payment />} />
 
                 {/* Protected admin routes */}
                 {/* <Route path="/admin" element={<AdminProtected><Admin /></AdminProtected>} /> */}

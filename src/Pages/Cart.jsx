@@ -119,18 +119,23 @@ function Cart() {
         </div>
       )}
       <div className="pb-3">
-      <h3 className="my-3 px-3">Bestsellers for you</h3>
-      <HorizontalScrollableProducts products={products} />
+        <h3 className="my-3 px-3">Bestsellers for you</h3>
+        <HorizontalScrollableProducts products={products} />
       </div>
 
+      {cartCount > 0 && (
       <div className="cart-buy-button">
         <div className="d-flex justify-content-around border-top center green p-2">
-          <div className="sub-title ">You will save ₹{totalDiscount} on this order</div>{" "}
+          <div className="sub-title ">
+            You will save ₹{totalDiscount} on this order
+          </div>{" "}
           <Link to="/checkout" className="p-btn">
-        Place Order
-      </Link>
+            Place Order
+          </Link>
         </div>
       </div>
+)}
+
     </div>
   );
 }

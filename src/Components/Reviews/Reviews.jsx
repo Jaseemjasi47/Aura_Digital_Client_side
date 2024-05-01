@@ -1,6 +1,8 @@
 import React from "react";
 import RatingStars from "./RatingStars";
 import "./Reviews.css";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faCircleCheck, faCircleUser } from "@fortawesome/free-solid-svg-icons";
 
 function Reviews() {
   const reviews = [
@@ -20,15 +22,18 @@ function Reviews() {
     <div>
       <h2 className="m-3">Ratings & Reviews</h2>
       {reviews.map((review, index) => (
-      <div className="review-container" key={index}>
+      <div className="review-container p-2" key={index}>
+        <div className="center"><FontAwesomeIcon icon={faCircleUser} className="px-1 r-user-icon"/></div>
+        <div className="px-2">
         <div className="reviewer-name">
           {review.username}
           <RatingStars rating={review.rating} />
         </div>
-        <p className="review-des text-short">
+        <div className="review-des text-short">
           {review.des}
-        <div className="verified-purchase">verified Purchase</div>
-        </p>
+        <div className="verified-purchase"><FontAwesomeIcon icon={faCircleCheck} className="px-1"/>verified Purchase</div>
+        </div>
+        </div>
       </div>
       ))}
       <div className="showmore review-container text-center">show more</div>
