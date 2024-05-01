@@ -72,6 +72,10 @@ background: linear-gradient(to left, #243B55, #141E30); */
 }
 
 /* -------------------------------------------- Colors --------------------------------------------- */
+.bg-gray {
+  background-color: #f3f3f3;
+}
+
 .red {
   color: red;
 }

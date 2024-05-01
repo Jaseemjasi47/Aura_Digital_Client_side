@@ -33,3 +33,46 @@
 }
 
 
+.user-menu {
+    display: flex;
+    flex-wrap: wrap;
+    background-color: white;
+    
+  }
+
+.bg-white {
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+  
+  .user-menu-box {
+    width: 45%; /* Two boxes per row by default */
+    box-sizing: border-box;
+    padding: 10px;
+    border: 1px solid rgb(168, 168, 168);
+    margin: 5px;
+    text-align: center;
+    border-radius: 15px;
+  }
+
+  .user-menu-box:hover {
+    background-color: rgb(238, 238, 238);
+  }
+
+  .user-options {
+    border-bottom: 1px solid rgb(240, 240, 240) ;
+    padding: 10px;
+    display: flex;
+    font-size: .9rem;
+    justify-content: space-between;
+  }
+
+  .user-options:hover {
+    background-color: rgb(238, 238, 238);
+  }
+  
+  @media (min-width: 768px) {
+    .user-menu-box {
+      max-width: 22%; /* Four boxes per row for screens larger than 768px */
+    }
+  }
+
