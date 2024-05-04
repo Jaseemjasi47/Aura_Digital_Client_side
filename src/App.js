@@ -29,6 +29,10 @@ import { SearchProvider } from "./Context/SearchProvider";
 import SearchResult from "./Pages/SearchResult";
 import { WishListProvider } from "./Context/WishList";
 import Payment from "./Pages/Payment";
+import Orders from "./Pages/Orders";
+import EditProfile from "./Components/UserProfile/EditProfile";
+import Address from "./Components/UserProfile/Address";
+import AddAddress from "./Components/UserProfile/AddAddress";
 
 function App() {
   const [loading, setLoading] = useState(true);
@@ -70,7 +74,11 @@ function App() {
                 <Route path="/Cart" element={<Cart />} />
                 <Route path="/wishlist" element={<Wishlist />} />
                 <Route path="/checkout" element={<CheckOut />} />
+                <Route path="/orders" element={<Orders />} />
                 <Route path="/account" element={<UserProfile />} />
+                <Route path="/edit-profile" element={<EditProfile />} />
+                <Route path="/address" element={<Address />} />
+                <Route path="/add-address" element={<AddAddress />} />
                 <Route path="/search" element={<SearchResult />} />
                 <Route path="/payment" element={<Payment />} />
 

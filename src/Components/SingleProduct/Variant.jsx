@@ -25,7 +25,7 @@ function Variant() {
   };
 
   const handleRamClick = (ram) => {
-    setActiveStorage(ram);
+    setActiveRam(ram);
   };
 
   return (

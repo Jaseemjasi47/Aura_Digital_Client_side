@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Loading from "../Components/Loading/Loading";
 import { Link } from "react-router-dom";
 import "./UserProfile.css";
@@ -21,6 +21,9 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 
 function UserProfile() {
+  useEffect(() => {
+    window.scrollTo(0, 0); // Scroll to the top when component mounts
+  }, []);
   const [Login, setLogin] = useState(true);
 
   const onHandleLogin = ()=> {
@@ -31,40 +34,40 @@ function UserProfile() {
     <div className="bg-gray">
       {Login ? (
         <>
-          <div className="bg-white my-2">
-            <div className="px-2">Hello! username</div>
+          <div className="bg-white my-3">
+            <div className="px-2 my-1">Hello! username</div>
             <div className="user-menu center py-2">
-              <div className="user-menu-box">
+            <Link to={"/orders"} className="link user-menu-box">
                 <FontAwesomeIcon icon={faBox} className="px-1" />
                 Orders
-              </div>
-              <div className="user-menu-box">
+              </Link>
+              <Link to={"/wishlist"} className="link user-menu-box">
                 <FontAwesomeIcon icon={faHeart} className="px-1" />
                 Wishlist
-              </div>
-              <div className="user-menu-box">
+              </Link>
+              <Link to={"/cart"} className="link user-menu-box">
                 <FontAwesomeIcon icon={faCartShopping} className="px-1" />
                 Cart
-              </div>
-              <div className="user-menu-box">
+              </Link>
+              <Link to={"/cart"} className="link user-menu-box">
                 <FontAwesomeIcon icon={faHeadset} className="px-1" />
                 Help Center
-              </div>
+              </Link>
             </div>
           </div>
           <div className="bg-white my-2">
             <div className="pt-2">
               <h5 className="px-1">Account Settings</h5>
-              <div className="border-top user-options">
+              <Link to={"/edit-profile"}  className="border-top user-options link">
                 <div>
                   <FontAwesomeIcon icon={faUser} className="px-1" />
                   Edit Profile{" "}
                 </div>
                 <div>
                   <FontAwesomeIcon icon={faAngleRight} className="px-2" />
-                </div>
               </div>
-              <div className="user-options">
+                </Link>
+                <Link to={"/address"}  className="border-top user-options link">
                 <div>
                   <FontAwesomeIcon icon={faLocationDot} className="px-1" />
                   Saved Address
@@ -72,7 +75,7 @@ function UserProfile() {
                 <div>
                   <FontAwesomeIcon icon={faAngleRight} className="px-2" />
                 </div>
-              </div>
+                </Link>
             </div>
           </div>
 

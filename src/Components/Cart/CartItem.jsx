@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBolt, faTruck } from "@fortawesome/free-solid-svg-icons";
 import { faTrashCan } from "@fortawesome/free-regular-svg-icons";
@@ -7,19 +7,44 @@ import { notify } from "../Notify";
 import MarketLabel from "../Labels/MarketLabel";
 
 function CartItem({ cartProducts }) {
+
+  const [quantities, setQuantities] = useState(cartProducts.map(() => 1));
+
+  const handleQuantityChange = (index, quantity) => {
+    const newQuantities = [...quantities];
+    newQuantities[index] = quantity;
+    setQuantities(newQuantities);
+  };
+
   const itemRemoved = () => {
     notify("Item Removed");
   };
 
-  return (
+  return (  
     <div>
       {cartProducts.map((product, index) => (
         <div className="white-box">
           <div key={index} className="d-flex p-2 justify-content-between">
+            <div>
             <Link to="/singleProduct">
               <img src={product.image} alt={product.name} />
             </Link>
-
+            <div className="center">
+                <select
+                  value={quantities[index]}
+                  onChange={(e) => handleQuantityChange(index, parseInt(e.target.value))}
+                >
+                  {[...Array(5).keys()].map((num) => (
+                    <option key={num + 1} value={num + 1}>
+                      Qty: {num + 1}
+                    </option>
+                  ))}
+                  {/* <option className="text-center">
+                     more
+                    </option> */}
+                </select>
+              </div>
+              </div>
             <div>
               <div className="mb-2 text-short-1">{product.name}</div>
               <div className="sub-title">Order in 20 h 55 m</div>
@@ -33,11 +58,6 @@ function CartItem({ cartProducts }) {
                 <s>₹{product.discountPrice}</s>
                 <snap className="px-1 green">{product.discount} OFF</snap>
               </div>
-              {/* <div className="label-market">
-              <FontAwesomeIcon icon={faShop} className="label-market-logo" />
-              Market
-            </div>
-            <div className="label-goexpress">Go express</div> */}
               <MarketLabel type={product.market} />
               <div>
                 <FontAwesomeIcon icon={faTruck} className="px-2 blue" />

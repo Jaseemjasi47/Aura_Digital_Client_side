@@ -40,6 +40,13 @@ function CheckOut() {
 
   const [totalPrice, setTotalPrice] = useState(0);
   const [totalDiscount, setTotalDiscount] = useState(0);
+  const [quantities, setQuantities] = useState(Products.map(() => 1));
+
+  const handleQuantityChange = (index, quantity) => {
+    const newQuantities = [...quantities];
+    newQuantities[index] = quantity;
+    setQuantities(newQuantities);
+  };
 
   useEffect(() => {
     window.scrollTo(0, 0); // Scroll to the top when component mounts
@@ -77,7 +84,23 @@ function CheckOut() {
           <div key={index} className="d-flex p-2 justify-content-between">
             <div>
               <img src={product.image} alt={product.name} />
-            <div className='quantity m-2'>Qty: {product.quantity}</div>
+
+              <div className="center">
+                <select
+                  value={quantities[index]}
+                  onChange={(e) => handleQuantityChange(index, parseInt(e.target.value))}
+                >
+                  {[...Array(5).keys()].map((num) => (
+                    <option key={num + 1} value={num + 1}>
+                      Qty: {num + 1}
+                    </option>
+                  ))}
+                  {/* <option className="text-center">
+                     more
+                    </option> */}
+                </select>
+              </div>
+
             </div>
             <div>
               <div className="mb-2 text-short-1">{product.name}</div>
